@@ -9,7 +9,11 @@ import {
   pluginCSSAMD,
   pluginCSSCommon,
   pluginCSSES2015,
-  pluginCSSSystem
+  pluginCSSSystem,
+  pluginScssAMD,
+  pluginScssCommon,
+  pluginScssES2015,
+  pluginScssSystem
 } from "./process-css";
 import {
   transpilePluginCommon,
@@ -31,17 +35,21 @@ export default gulp.series(
     pluginMarkupAMD,
     pluginCSSAMD,
     transpilePluginAMD,
+    pluginScssAMD,
 
     pluginMarkupCommon,
     transpilePluginCommon,
     pluginCSSCommon,
+    pluginScssCommon,
 
     pluginMarkupES2015,
     transpilePluginES2015,
     pluginCSSES2015,
+    pluginScssES2015,
     
     pluginCSSSystem,
     pluginMarkupSystem,
-    transpilePluginSystem
+    transpilePluginSystem,
+    pluginScssSystem
   )
 );
