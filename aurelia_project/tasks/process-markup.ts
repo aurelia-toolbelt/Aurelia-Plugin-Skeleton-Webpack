@@ -11,7 +11,19 @@ export default function processMarkup() {
     .pipe(build.bundle());
 }
 
-export function pluginMarkup() {
+export function pluginMarkupCommon() {
   return gulp.src(project.plugin.source.html)
-    .pipe(gulp.dest(project.plugin.output));
+    .pipe(gulp.dest(project.plugin.output + "/commonjs"));
+}
+export function pluginMarkupSystem() {
+  return gulp.src(project.plugin.source.html)
+    .pipe(gulp.dest(project.plugin.output + "/system"));
+}
+export function pluginMarkupAMD() {
+  return gulp.src(project.plugin.source.html)
+    .pipe(gulp.dest(project.plugin.output + "/amd"));
+}
+export function pluginMarkupES2015() {
+  return gulp.src(project.plugin.source.html)
+    .pipe(gulp.dest(project.plugin.output + "/es2015"));
 }
