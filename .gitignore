@@ -31,3 +31,5 @@ node_modules
 /scripts
 /dist
 *.tgz
+
+/test/coverage-jest/*
