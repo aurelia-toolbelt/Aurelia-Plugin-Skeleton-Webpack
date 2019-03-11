@@ -113,6 +113,9 @@
   "engines": {
     "node": ">= 6.0.0"
   },
+   "files": [
+    "dist/**/*.*"
+  ],
   "scripts": {
     "start": "nps",
     "test": "nps test",
@@ -125,5 +128,8 @@
     "cypress:run": "./node_modules/.bin/cypress run",
     "cypress:open": "./node_modules/.bin/cypress open"
   },
-  "main": "dist/app.bundle.js"
+  "types": "dist/commonjs/index.d.ts",
+  "typings": "dist/commonjs/index.d.ts",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/commonjs/index.js"
 }
