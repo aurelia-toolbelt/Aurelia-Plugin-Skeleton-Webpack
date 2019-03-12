@@ -13,8 +13,8 @@
     "cypress": "^3.1.5",
     "@cypress/webpack-preprocessor": "4.0.3",
     "@types/jest": "^24.0.11",
-    "@types/lodash": "^4.14.122",
-    "@types/node": "^11.11.0",
+    "@types/lodash": "^4.14.123",
+    "@types/node": "^11.11.2",
     "@types/webpack": "^4.4.25",
     "aurelia-animator-css": "^1.0.4",
     "@types/bluebird": "^3.5.26",
@@ -30,7 +30,7 @@
     "bluebird": "^3.5.3",
     "browser-sync": "^2.26.3",
     "connect-history-api-fallback": "^1.6.0",
-    "copy-webpack-plugin": "^5.0.0",
+    "copy-webpack-plugin": "^5.0.1",
     "css-loader": "^2.1.1",
     "debounce": "^1.2.0",
     "del": "^4.0.0",
@@ -50,8 +50,8 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "istanbul-instrumenter-loader": "^3.0.1",
-    "jest": "^24.3.1",
-    "jest-cli": "^24.3.1",
+    "jest": "^24.5.0",
+    "jest-cli": "^24.5.0",
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^0.5.0",
     "minimatch": "^3.0.4",
@@ -75,7 +75,8 @@
     "webpack": "^4.29.6",
     "webpack-bundle-analyzer": "latest",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.2.1",
+    "gulp-copy": "^4.0.1"
   },
   "jest": {
     "modulePaths": [
@@ -113,7 +114,7 @@
   "engines": {
     "node": ">= 6.0.0"
   },
-   "files": [
+  "files": [
     "dist/**/*.*"
   ],
   "scripts": {
@@ -123,10 +124,12 @@
     "version": "standard-changelog && git add CHANGELOG.md",
     "prepare": "au build-plugin",
     "postversion": "git push && git push --tags",
-	"test:e2e": "npm run start && ./node_modules/.bin/cypress run",
+    "test:e2e": "npm run start && ./node_modules/.bin/cypress run",
     "test:e2e:open": "au run --watch && ./node_modules/.bin/cypress open",
     "cypress:run": "./node_modules/.bin/cypress run",
-    "cypress:open": "./node_modules/.bin/cypress open"
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "build-plugin": "au build-plugin",
+    "pack": "npm pack"
   },
   "types": "dist/commonjs/index.d.ts",
   "typings": "dist/commonjs/index.d.ts",

@@ -13,7 +13,11 @@ import {
   pluginScssAMD,
   pluginScssCommon,
   pluginScssES2015,
-  pluginScssSystem
+  pluginScssSystem,
+  pluginCopyScssFilesCommon,
+  pluginCopyScssFilesAMD,
+  pluginCopyScssFilesSystem,
+  pluginCopyScssFilesES2015
 } from "./process-css";
 import {
   transpilePluginCommon,
@@ -26,6 +30,7 @@ import * as del from "del";
 import * as project from "../aurelia.json";
 
 function clean() {
+  // @ts-ignore
   return del(project.plugin.output);
 }
 
@@ -50,6 +55,11 @@ export default gulp.series(
     pluginCSSSystem,
     pluginMarkupSystem,
     transpilePluginSystem,
-    pluginScssSystem
+    pluginScssSystem,
+
+    pluginCopyScssFilesCommon,
+    pluginCopyScssFilesAMD,
+    pluginCopyScssFilesSystem,
+    pluginCopyScssFilesES2015
   )
 );
